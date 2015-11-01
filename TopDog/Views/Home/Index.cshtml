@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<head>
+    <script src="/Scripts/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/content/Site.css">
+</head>
+
+<style>
+.img-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+<div class="jumbotron">
+    <h1 class="text-center">The HypterActive Trader</h1>
+        <img class="img-center" src=~/Resources/happy-sundown.jpg />
+    <p class="text-center"> @Html.ActionLink("Why we are different","HyperActiveTrader" )</p>
+    <div>
+        <ul>
+            <li class="appBullet text-center">Markets Doesn't Matter</li>
+            <li class="appBullet text-center">I Can lose money in any market</li>
+        </ul>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2 class="text-center">@Html.ActionLink("Make Good Entries", "Index", "TopDog", null, new { @class = "btn btn-success" })</h2>
+        <a href="/TopDog">
+            <p><img class="img-center" src=~/Resources/unsplash-pc-chart-cropped.jpg height="183" width="275" /> </p>
+         </a>
+</div>
+    <div class="col-md-4">
+        <h2 class="text-center">@Html.ActionLink("Tackle Impulsivenes", "Index", "peakP", null, new { @class = "btn btn-warning" })</h2>
+        <a href="/peakP">
+            <p><img class="img-center" src=~/Resources/success2.png /></p>
+        </a>
+</div>
+    <div class="col-md-4">
+        <h2 class="text-center">@Html.ActionLink("Trader Blog", "Index", "Blog", null, new { @class = "btn btn-danger" })</h2>
+        <a href="/Blog">
+            <p><img class="img-center" src=~/Resources/success2.png /></p>
+        </a>
+</div>
+</div>

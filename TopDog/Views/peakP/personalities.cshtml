@@ -1,0 +1,48 @@
+﻿<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/content/Site.css">
+</head>
+
+@{
+    ViewBag.Title = "personalities";
+}
+
+<div class="text-center" ng-app="PersonalityApp" ng-controller="PersonalityCtrl">
+    <h2>{{pageName}}</h2>
+    <br /><br />
+
+    <p class="PP-Details"></p>
+    <ul>
+        <li class="appBullet" ng-mouseover="ppHover($index)" ng-repeat="x in names">
+            <div><a ng-href=" {{ x.route }}"> {{ x.Title }}</a></div>
+        </li>
+
+    </ul>
+    <br /><br />
+</div>
+    <h4 class="bottom-left">@Html.ActionLink("Back", "Index", "peakP", null, new { @class = "btn btn-info" })</h4>
+    <h4 class="bottom-left">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "btn btn-danger" })</h4>
+<script>
+    var app = angular.module('PersonalityApp', []);
+    app.controller('PersonalityCtrl', function ($scope) {
+
+        $scope.pageName = "Trading Personalities";
+        $scope.names = [
+            { "Title": "The Courageous Fighter"       , "route": "fighter"    , "Description":"Dosn't hesitate to take risks, stuborn, confident" },
+            { "Title": "The Conscientious Rationalist", "route": "rationalist", "Description": "Take calculated  risks, rule based, not impulsive" },
+            { "Title": "The Competitive Pragmatist", "route": "pragmatist", "Description": " Fiercely competitive, creative and ambitious" },
+            { "Title": "The Creative Visionary", "route": "visionary", "Description": " Think out of the box, idealistic and experiential " }
+        ];
+
+    $scope.ppHover = function (i) {
+        console.log(i);
+        $(".PP-Details").text($scope.names[i].Description);
+    }, function () {
+        // Hover out, null function to prevent the hover in function to repeat continuously
+    };
+    });
+
+
+</script>
+
+

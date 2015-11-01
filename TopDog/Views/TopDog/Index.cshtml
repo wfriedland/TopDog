@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<head>
+    <script src="/Scripts/jquery-1.10.2.js"></script>
+</head>
+
+<h2 class="text-center ">TopDog Trading</h2>
+<style>
+     .barry-quotes-area {
+        display:block;
+        margin-left: auto;
+        margin-right: auto;
+        white-space: unset;
+        width: 100%;
+    }
+    .barry-quotes {
+        background-color: inherit;
+        color: inherit;
+        border: none;
+        margin-left: auto;
+        margin-right: auto;
+        font-size:1.5em;
+        width:30%;
+    }
+    .myimages {
+    width: 100%;
+    display: block;
+    white-space: nowrap;
+    }
+    .myimages img {
+        display: inline-block;
+        margin: 20px;
+    }
+</style>
+
+<div class="myimages">
+    <img src="~/Resources/big-cropped-baby-on-a-computer.jpg" /> 
+    <img src="~/Resources/guy-freaking-out-on-computer.jpg" />
+    <img src="~/Resources/frustrated-girl-on-computer.jpg" />
+    <img src="~/Resources/happy-guy-on-computer-cropped.jpg" />
+</div>    
+<div class="barry-quotes-area">
+    <br />
+    <text class="barry-quotes text-center"></text>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h2 class="text-center">@Html.ActionLink("Classes", "classes", "TopDog", null, new { @class = "btn btn-success" })</h2>
+        <p>This section will talk about TopDog courses in general. Topics covered. Barry's track record. Satisfied customers, etc et etc</p>
+    </div>
+    <div class="col-md-4">
+        <h2 class="text-center">@Html.ActionLink("Indicator", "indicator", "TopDog", null, new { @class = "btn btn-warning" })</h2>
+        <p>
+            This section will talk about the TopDog indicator package. There might be several versions of this
+            indicator and these indicators run on multiple platforms
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2 class="text-center">@Html.ActionLink("Support", "support", "TopDog", null, new { @class = "btn btn-danger" })</h2>
+        <p>I am not sure what to put here. There must be another service Barry offers at TopDog. </p>
+    </div>
+</div>
+<script>
+    var quotes = ["Most people do not bother maintaining a daily trading jounal, however most people do not make money trading",
+                 "There are 2 aspects to trading psychology:  First you must trust your trading methodology and secondly you must trust yourself.",
+                "… you absolutely must have money management … Topped off with a healthy dose of discipline.",
+                  "Don’t trade if you’re tired. No emotion. NO FEAR",
+                  "I have found this to be a great truism in my trading life. As long as I don’t make mistakes, I come out ahead at the end of the week or month",
+                   "Everything in the market is relative. There are no absolutes. There is no best time interval, moving average, indicator, market to trade, etc. There are no certainties",
+                  "Retail traders (amateurs) are often right, but at the wrong time.",
+                  "The defining characteristic that separates the consistent winners from everyone else is their mind-set"
+                ];
+    var idx = 1;
+    $(".barry-quotes").text(quotes[0]);
+    var idx = 1;
+
+    var t1 = window.setInterval(function () {
+    
+        $(".barry-quotes").fadeOut(duration = 2000, function () {
+            $(".barry-quotes").text(quotes[idx]);
+            idx = idx + 1;
+            if (idx == quotes.length) idx = 0;
+            console.log("This version got loaded");
+        });
+        $(".barry-quotes").fadeIn(duration = 2000);
+    }, 12000);
+
+    $(window).unload(function () {
+        console.log("Handler for .unload() called.");
+        alert("Leaving the TopDog Page");
+        return "Bye now!";
+    });
+
+</script>

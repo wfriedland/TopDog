@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "Trader's Blog";
+}
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script src="/Scripts/jquery-1.10.2.js"></script>
+<link rel="stylesheet" type="text/css" href="~/content/Site.css">
+</head>
+<style>
+    .blogBullet:hover {
+        font-size: 1.5em;
+ 
+    }
+    .blogBullet {
+        list-style:none;
+        align-content:initial;
+        padding-left: 0;
+        list-style:circle;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        
+    }
+    .blogTitles{
+        width:100%;
+        margin-left:20px;
+    }
+</style>
+<div class="text-center" ng-app="blogApp" ng-controller="blogCtrl"  >
+    <h2>The HyperActive Trader</h2>
+    <h3>{{pageName}}</h3><br /><br /> 
+    <div class="row">
+        <div class="col-md-3">
+            @Html.ActionLink("Our Friends at TopDog", "Index", "TopDog", null, new { @class = "btn btn-info" })
+            <a href="/TopDog">
+            <p>  <img class="img img-rounded" src=~/Resources/unsplash-pc-chart-cropped.jpg height="120" width="180" /> </p>
+            </a>
+            @Html.ActionLink("Our Friends at TopDog", "Index", "TopDog", null, new { @class = "btn btn-info" })
+            <br /><br /><br /><br /><br /><br />
+            @Html.ActionLink("NeurOptimal Training", "Index", "peakP", null, new { @class = "btn btn-info" })
+            <a href="/PeakP">
+                <p><img class="img img-rounded" src=~/Resources/success2.png height="120" width="180" /></p>
+            </a>
+            @Html.ActionLink("NeurOptimal Training", "Index", "peakP", null, new { @class = "btn btn-info" })
+        </div>
+
+        <div class="col-md-9 text-center">
+            <h3>Latest Hyper Active Contributions</h3>
+            <ul class="blogTitles">
+                <li class="blogBullet text-left" ng-repeat="x in names | orderBy:'Title'">
+                    {{x.Title}}--{{x.subTitle }}
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    var app = angular.module('blogApp', []);
+    app.controller('blogCtrl', function ($scope) {
+
+        $scope.pageName = "A Path Seldom Taken";
+        $scope.names = [
+            { "Title": "Trading Personalities", "url": "http://www.yahoo.com", "subTitle":"Personality theory is an area of applied psychology"},
+            { "Title": "Learning Channels", "url": "http://www.cnn.com", "subTitle":"Mental processing style dictates the speed of decision making"},
+            { "Title": "Risk Seekers / Risk Averse", "url": "http://www.aol.com", "subTitle": "Genetics plays a key role in trading performance" },
+            { "Title": "Joe DiMaggio has got nothing on me ", "url": "http://www.google.com", "subTitle":"A daily winning streak of 70 games puts me in pretty good company" },
+            { "Title": "Trading Jounaling", "url": "http://www.msn.com", "subTitle":"The most important habit a trader can have" },
+            { "Title": "Recording Trade Results", "url": "http://www.briefing.com", "subTitle":"10 best methods of recording your trading progress" },
+            { "Title": "Choking", "url": "http://www.ifundtraders.com", "subTitle":"The art of the choke goes way beyong the playing field"},
+            { "Title": "Playing to Win", "url": "http://www.bing.com", "subTitle":"Plan to lose than play to win" }
+        ]
+    });
+</script>
+

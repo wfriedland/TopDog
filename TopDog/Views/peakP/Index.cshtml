@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Peak Performance Trading";
+}
+<head>
+    <script src="/Scripts/jquery-1.10.2.js"></script>
+</head>
+<div class="text-center">
+    <h2>Peak Performance </h2>
+    <h3>Trading Education for who you are</h3>
+    <ol>
+        <li class="appBullet">@Html.ActionLink("Trading Personalities", "personalities", "peakP")</li>
+        <li class="appBullet">@Html.ActionLink("Learning Channels", "learningChannels", "peakP") </ li >
+        <li class="appBullet">@Html.ActionLink("Managing Risk", "riskSeekers", "peakP") </ li >
+        <li class="appBullet">@Html.ActionLink("Managing Emotional State", "BrainBalance", "peakP") </ li >
+        <li class="appBullet">@Html.ActionLink("Managing Stress", "choking", "peakP") </ li >
+        <li class="appBullet">@Html.ActionLink("Playing to Win", "playToWin", "peakP") </ li >
+    </ol>
+    <br /><br />
+    <p class="PP-Details"></p>
+</div>
+
+<script>
+    var PP_comments = [
+           "The Courageous Fighter,The Conscientious Rationalist,The Competitive Pragmatist,The Creative Visionary",
+           "Visual, Auditory, and Kinesthetic",
+           "Risk Seekers / Risk Averse",
+           "Left / Right Brain Balance ",
+           "Trying too hard / Thinking too hard", 
+           "Dopamine, Anticipation, and Non-Linear"
+    ];
+
+    $(".appBullet").hover(function () {
+        var i = $(this).index();
+        $(".PP-Details").text(PP_comments[i]);
+    }, function() {
+        // Hover out, null function to prevent the hover in function to repeat continuously
+    }
+); 
+</script>
