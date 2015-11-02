@@ -206,6 +206,8 @@
     <None Include="Resources\button1.png" />
     <None Include="Resources\happy-guy-on-computer-cropped.jpg" />
     <None Include="Resources\big-cropped-baby-on-a-computer.jpg" />
+    <None Include="Resources\success3.png" />
+    <None Include="Resources\indicator.PNG" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />

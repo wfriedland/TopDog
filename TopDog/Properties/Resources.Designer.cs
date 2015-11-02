@@ -133,9 +133,29 @@ namespace TopDog.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap indicator {
+            get {
+                object obj = ResourceManager.GetObject("indicator", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap success2 {
             get {
                 object obj = ResourceManager.GetObject("success2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap success3 {
+            get {
+                object obj = ResourceManager.GetObject("success3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

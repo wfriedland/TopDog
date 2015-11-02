@@ -1,11 +1,48 @@
-﻿
+﻿<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/content/Site.css">
+</head>
+
 @{
     ViewBag.Title = "learningChannels";
 }
+<div class="text-center" ng-app="learningChanApp" ng-controller="learningChanCtrl">
 
-<h2>Learning Channels</h2>
+        <h2>{{pageName}}</h2>
+        <h3>{{pageSubName}}</h3>
+        <img src=" {{image}} " />
 
+        <p class="PP-Details"></p>
+        <ul>
+            <li class="appBullet" ng-mouseover="ppHover($index)" ng-repeat="x in names">
+                <div><a ng-href=" {{ x.route }}"> {{ x.Title }}</a></div>
+            </li>
 
-<h4 class="bottom-left">@Html.ActionLink("Back", "Index", "peakP", null, new { @class = "btn btn-danger" })</h4>
-<h4 class="bottom-left">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "btn btn-danger" })</h4>
+        </ul>
+        <br />
+ </div>
+    <h4 class="bottom-left">@Html.ActionLink("Back", "Index", "peakP", null, new { @class = "btn btn-danger" })</h4>
+    <h4 class="bottom-left">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "btn btn-danger" })</h4>
+    <script>
+    var app = angular.module('learningChanApp', []);
+    app.controller('learningChanCtrl', function ($scope) {
+
+    $scope.pageName = "Learning Channels";
+    $scope.pageSubName = "Mental Processing Style";
+    $scope.image = "../../Resources/frustrated-girl-on-computer.jpg"
+    $scope.names = [
+    { "Title": "Visual"       , "route": "PlayToWin"    , "Description":"Visual Learners have an unfair advantage over the rest of us" },
+    { "Title": "Auditory", "route": "recordResults", "Description": " Auditor learners" },
+    { "Title": "Kinesthetic", "route": "choking", "Description": " The learning channel that supports choking the most" },
+    { "Title": "Indicator", "route": "../TopDog/Indicator", "Description": " An indicator that helps Kinesthetic learners  " }
+    ];
+
+    $scope.ppHover = function (i) {
+        console.log(i);
+        $(".PP-Details").text($scope.names[i].Description);
+    }, function () {
+        // Hover out, null function to prevent the hover in function to repeat continuously
+    };
+    });
+    </script>
 

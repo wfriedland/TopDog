@@ -139,8 +139,14 @@
   <data name="happy_sundown" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\happy-sundown.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="indicator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\indicator.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="success2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\success2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="success3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\success3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="unsplash_pc_chart_cropped" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\unsplash-pc-chart-cropped.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
