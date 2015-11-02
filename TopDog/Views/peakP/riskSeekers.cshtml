@@ -1,12 +1,42 @@
-﻿
+﻿<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/content/Site.css">
+</head>
+
 @{
-    ViewBag.Title = "riskSeekers";
+    ViewBag.Title = "Risk Seekers";
 }
+<div class="text-center" ng-app="riskApp" ng-controller="riskCtrl">
 
-<h2>Risk Seekers</h2>
+    <h2>{{pageName}}</h2>
+    <h3>{{pageSubName}} <span class="riskCountry" ></span></h3>
+ 
+    <ol>
+        <li class="appBullet" ng-mouseover="ppHover($index)" ng-repeat="x in name | orderBy : 'Country'">
+            {{x.Name}} from {{x.City}} , {{x.Country}}
+        </li>
+    </ol>
 
-
-
+</div>
 <h4 class="bottom-left">@Html.ActionLink("Back", "Index", "peakP", null, new { @class = "btn btn-danger" })</h4>
 <h4 class="bottom-left">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "btn btn-danger" })</h4>
+<script>
+    var app = angular.module('riskApp', []);
+    app.controller('riskCtrl', function($scope, $http) {
 
+        $scope.pageName = "Managing Risk";
+        $scope.pageSubName = "Risk Seekers";
+        $http.get("http://www.w3schools.com/angular/customers.php")
+            .success(function (response) { $scope.name = response.records; }),
+            function () {
+                $scope.name = [{"Name":"Joe Trader","City":"Portland","Country":"USA"}];
+            };
+        $scope.ppHover = function (i) {
+            console.log(i);
+            $(".riskCountry").text("from "+$scope.name[i].Country);
+        }, function () {
+            // Hover out, null function to prevent the hover in function to repeat continuously
+        };
+
+    });
+</script>
